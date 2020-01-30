@@ -5,6 +5,7 @@
 def sum arr
   # YOUR CODE HERE
   res=0
+  #if the array is empty
   if arr.length==0
     return res
   end
@@ -17,6 +18,7 @@ end
 def max_2_sum arr
   # YOUR CODE HERE
   res=0
+  #base cases: length=0 and length=1
   if arr.length==0
     return res
   end
@@ -24,6 +26,7 @@ def max_2_sum arr
     return arr[0]
   end
   arr2=arr.sort
+  #last 2 elements of sorted array
   return arr2[-1]+arr2[-2]
 end
 
@@ -31,6 +34,7 @@ def sum_to_n? arr, n
   # YOUR CODE HERE
   d={}
   for i in 0..(arr.length-1)
+    #check if complement of i exists in d
     if d.key?(n-arr[i])
       return true
     end
@@ -50,11 +54,13 @@ def starts_with_consonant? s
   # YOUR CODE HERE
   arr=["a","e","i","o","u","A","E","I","O","U"]
   if arr.include? s.to_s[0]
+    #first letter is vowel
     return false
   end
-  if s.to_s[0] =~ /[[:alpha:]]/
+  if s.to_s[0]=~/[[:alpha:]]/
     return true
   else
+    #first letter is not an alphabet
     return false
   end
 end
@@ -63,6 +69,7 @@ def binary_multiple_of_4? s
   # YOUR CODE HERE
   arr=["1","0"]
   if not arr.include? s.to_s[0]
+    #not a binary string
     return false
   end
   s=s.to_i
@@ -79,6 +86,7 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+  #class variables
   attr_accessor :isbn
   attr_accessor :price
   def initialize isbn,price
